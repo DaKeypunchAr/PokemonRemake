@@ -1,0 +1,25 @@
+# ninja log v6
+2095	2687	1729086833072298481	PokemonRemake	937fa322d2fb16b0
+49	2095	1729086831026298407	CMakeFiles/PokemonRemake.dir/main.cpp.o	2a9a6b40fe467bdd
+297	756	1729161306079496006	build.ninja	3b62961100f4fe15
+6	3625	1729161306131496008	CMakeFiles/PokemonRemake.dir/GLFWWindow.cpp.o	613399528d931a50
+5	3637	1729161306130496008	CMakeFiles/PokemonRemake.dir/GameWindow.cpp.o	5498cf627bccccf3
+4	4024	1729161306130496008	CMakeFiles/PokemonRemake.dir/GameLoader.cpp.o	75252c426d5278c5
+4	4048	1729161306129496008	CMakeFiles/PokemonRemake.dir/main.cpp.o	2a9a6b40fe467bdd
+941	13461	1729161722065510964	CMakeFiles/PokemonRemake.dir/GameWindow.cpp.o	5498cf627bccccf3
+600	9803	1729162504974539114	CMakeFiles/PokemonRemake.dir/GameWindow.cpp.o	5498cf627bccccf3
+579	9827	1729162504970539114	CMakeFiles/PokemonRemake.dir/main.cpp.o	2a9a6b40fe467bdd
+601	9827	1729162504975539114	CMakeFiles/PokemonRemake.dir/GLFWWindow.cpp.o	613399528d931a50
+145	4299	1729162570630541475	CMakeFiles/PokemonRemake.dir/GLFWWindow.cpp.o	613399528d931a50
+144	4317	1729162570629541475	CMakeFiles/PokemonRemake.dir/GameWindow.cpp.o	5498cf627bccccf3
+115	4323	1729162570600541474	CMakeFiles/PokemonRemake.dir/main.cpp.o	2a9a6b40fe467bdd
+105	12606	1729162789084549330	CMakeFiles/PokemonRemake.dir/main.cpp.o	2a9a6b40fe467bdd
+135	12672	1729162789104549331	CMakeFiles/PokemonRemake.dir/GameWindow.cpp.o	5498cf627bccccf3
+136	12673	1729162789104549331	CMakeFiles/PokemonRemake.dir/GLFWWindow.cpp.o	613399528d931a50
+88	621	1729162853538551647	CMakeFiles/PokemonRemake.dir/GLFWWindow.cpp.o	613399528d931a50
+131	5211	1729163123630561359	CMakeFiles/PokemonRemake.dir/main.cpp.o	2a9a6b40fe467bdd
+131	5229	1729163123630561359	CMakeFiles/PokemonRemake.dir/GameWindow.cpp.o	5498cf627bccccf3
+131	5229	1729163123631561359	CMakeFiles/PokemonRemake.dir/GLFWWindow.cpp.o	613399528d931a50
+197	2290	1729163261516566317	CMakeFiles/PokemonRemake.dir/GLFWWindow.cpp.o	613399528d931a50
+190	2309	1729163261515566317	CMakeFiles/PokemonRemake.dir/GameWindow.cpp.o	5498cf627bccccf3
+2309	2706	1729163263628566393	PokemonRemake	ea8f72b7626558e8
