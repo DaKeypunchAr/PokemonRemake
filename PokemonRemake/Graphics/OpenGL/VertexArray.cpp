@@ -1,5 +1,6 @@
 #include "VertexArray.hpp"
 #include "glad/glad.h"
+#include "Logger/Logger.hpp"
 
 namespace OpenGL
 {

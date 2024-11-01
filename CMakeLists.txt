@@ -42,6 +42,10 @@ add_executable(PokemonRemake
         PokemonRemake/ResourceManagement/ResourceManagerStd.hpp
         PokemonRemake/Graphics/OpenGL/RenderCommand.cpp
         PokemonRemake/Graphics/OpenGL/RenderCommand.hpp
+        PokemonRemake/Logger/Logger.cpp
+        PokemonRemake/Logger/Logger.hpp
+        PokemonRemake/Logger/ConsoleLogger.cpp
+        PokemonRemake/Logger/ConsoleLogger.hpp
 )
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")

@@ -1,6 +1,8 @@
 #include "ShaderProgram.hpp"
 #include "OpenGL/ShaderProgram.hpp"
 
+#include "RenderCommand.hpp"
+#include "Logger/Logger.hpp"
 #include "ResourceManagement/ResourceManager.hpp"
 
 namespace Graphics
@@ -41,15 +43,21 @@ namespace Graphics
 
 	SP_Handle ShaderProgram::Create(const std::string_view& vsSource, const std::string_view& fsSource)
 	{
-		ShaderProgram* sp = new OpenGL::ShaderProgram(vsSource, fsSource);
-		return Game::ResourceManager::CreateSP(sp);
+		ShaderProgram* sp;
+		switch (RenderCommand::GetAPI())
+		{
+		case API::OPENGL:
+			sp = new OpenGL::ShaderProgram(vsSource, fsSource);
+			return Game::ResourceManager::CreateSP(sp);
+		case API::NONE: Logger::Log("[ShaderProgram::Create]: None API received!", Logger::Severity::ERR);
+		default:        Logger::Log("[ShaderProgram::Create]: Unknown API received", Logger::Severity::ERR);
+		}
 	}
 
 	SP_Handle ShaderProgram::Create(const std::string_view& filePath)
 	{
-		// TODO: Load the source files!
-		ShaderProgram* sp = new OpenGL::ShaderProgram("", "");
-		return Game::ResourceManager::CreateSP(sp);
+		// TODO: Load the source files! And remove the bottom line!
+		return Create("", "");
 	}
 
 	void ShaderProgram::Bind(SP_Handle sp)

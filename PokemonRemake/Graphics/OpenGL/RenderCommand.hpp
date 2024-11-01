@@ -3,6 +3,12 @@
 
 namespace OpenGL
 {
-	void ClearScreen();
-	void DrawArrays(Graphics::RenderMode mode, uint first, uint count);
+	class RenderCommand : public Graphics::RenderCommand
+	{
+	public:
+		RenderCommand();
+		void clearScreen() override;
+		void drawArrays(Graphics::RenderMode mode, uint first, uint count) override;
+	};
+
 }

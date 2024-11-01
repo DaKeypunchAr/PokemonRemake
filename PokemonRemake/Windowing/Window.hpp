@@ -3,6 +3,11 @@
 
 namespace Game
 {
+    enum class WindowingAPI
+    {
+        GLFW
+    };
+
     class IWindow {
     public:
         virtual ~IWindow() = default;
@@ -12,5 +17,5 @@ namespace Game
         virtual void pollEvents() const = 0;
     };
 
-    std::unique_ptr<IWindow> CreateWindow(unsigned int width, unsigned int height);
+    std::unique_ptr<IWindow> CreateWindow(unsigned int width, unsigned int height, WindowingAPI api = WindowingAPI::GLFW);
 }

@@ -1,15 +1,23 @@
 #include "VertexArray.hpp"
 #include "OpenGL/VertexArray.hpp"
 
+#include "RenderCommand.hpp"
+#include "Logger/Logger.hpp"
 #include "ResourceManagement/ResourceManager.hpp"
 
 namespace Graphics
 {
 	VA_Handle VertexArray::Create()
 	{
-		// TODO: Make it choose! Not hardcoded!
-		VertexArray* va = new OpenGL::VertexArray();
-		return Game::ResourceManager::CreateVA(va);
+		VertexArray* va = nullptr;
+		switch (RenderCommand::GetAPI())
+		{
+		case API::OPENGL:
+			 va = new OpenGL::VertexArray();
+			return Game::ResourceManager::CreateVA(va);
+		case API::NONE: Logger::Log("[VertexArray::Create]: None API received!", Logger::Severity::ERR);
+		default:        Logger::Log("[VertexArray::Create]: Unknown API received", Logger::Severity::ERR);
+		}
 	}
 
 	void VertexArray::Bind(VA_Handle va)

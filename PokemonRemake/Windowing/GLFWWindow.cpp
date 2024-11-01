@@ -1,7 +1,5 @@
 #include "GLFWWindow.hpp"
-
-// TODO: Remove #include <iostream> cz it is temporary.
-#include <iostream>
+#include "Logger/Logger.hpp"
 
 namespace GLFW {
     Window::Window(unsigned int width, unsigned int height)
@@ -10,7 +8,7 @@ namespace GLFW {
         // TODO: Adda system to use other window hints.
         if (!glfwInit())
         {
-            std::cerr << "Failed to initialize GLFW" << std::endl;
+            Logger::Log("Failed to initialize GLFW", Logger::Severity::ERR);
         }
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
@@ -19,18 +17,18 @@ namespace GLFW {
 
         glfwSetErrorCallback([](int errorCode, const char* description)
         {
-            std::cerr << "GLFW Error (" << errorCode << "): " << description << '\n';
+            Logger::LogF("[GLFW Error]: Err code: %d, Description: %s", Logger::Severity::ERR, errorCode, description);
         });
 
-        m_WindowHandle = glfwCreateWindow(width, height, "GLFW Window Example", nullptr, nullptr);
+        m_WindowHandle = glfwCreateWindow(static_cast<int>(width), static_cast<int>(height), "GLFW Window Example", nullptr, nullptr);
 
         if (!m_WindowHandle)
         {
-            std::cerr << "Failed to create GLFW window" << std::endl;
+            Logger::Log("Failed to create GLFW Window!", Logger::Severity::ERR);
         }
         glfwMakeContextCurrent(m_WindowHandle);
 
-        std::cout << "Made a window successfully!\n";
+        Logger::DLog("Created a GLFW Window successfully!");
     }
 
     Window::~Window()
@@ -39,7 +37,7 @@ namespace GLFW {
         glfwDestroyWindow(m_WindowHandle);
         glfwTerminate();
 
-        std::cout << "Destroyed a window successfully!\n";
+        Logger::DLog("Destroyed a GLFW Window successfully!");
     }
 
     bool Window::shouldClose() const
